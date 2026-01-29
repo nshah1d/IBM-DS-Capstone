@@ -202,8 +202,6 @@ To launch the interactive analytics dashboard:
 
 ---
 
----
-
 ## Strategic Insights
 
 Based on the analysis of 90+ launches, the following data-driven strategies are recommended for **Space Y**:
