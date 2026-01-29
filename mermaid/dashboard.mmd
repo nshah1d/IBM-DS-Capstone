@@ -1,0 +1,9 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000', 'primaryTextColor': '#fff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'tertiaryColor': '#000'}}}%%
+graph TD
+    A[Input: Site Dropdown] -->|Filter Site| B(Update Pie Chart)
+    A -->|Filter Site| C(Update Scatter Plot)
+    D[Input: Payload Slider] -->|Filter Range| C
+    B --> E[Render: Success Pie Chart]
+    C --> F[Render: Payload Scatter Plot]
+    style E fill:#000,stroke:#00ffff,stroke-width:2px
+    style F fill:#000,stroke:#00ffff,stroke-width:2px

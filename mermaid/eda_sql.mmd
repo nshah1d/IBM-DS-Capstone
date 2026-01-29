@@ -1,0 +1,9 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000', 'primaryTextColor': '#fff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'tertiaryColor': '#000'}}}%%
+graph TD
+    A[Wrangled CSV] -->|Load| B[SQL Database]
+    B --> C{Execute Queries}
+    C -->|Aggregations| D[Sum/Avg Payloads]
+    C -->|Filtering| E[Identify Success Dates]
+    C -->|Grouping| F[Rank Launch Outcomes]
+    D & E & F --> G[Baseline KPIs]
+    style G fill:#000,stroke:#00ffff,stroke-width:2px

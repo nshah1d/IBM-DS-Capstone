@@ -1,0 +1,14 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000', 'primaryTextColor': '#fff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'tertiaryColor': '#000'}}}%%
+graph TD
+    A[Wikipedia URL] -->|requests.get| B[HTML Response]
+    B -->|BeautifulSoup| C[Find Table: wikitable]
+    C --> D[Iterate Rows tr]
+    D --> E{Is Flight No?}
+    E -->|Yes| F[Call Helper Functions]
+    F -->|date_time| G[Extract Date]
+    F -->|booster_version| H[Extract Version]
+    F -->|get_mass| I[Clean Mass]
+    F -->|landing_status| J[Extract Outcome]
+    G & H & I & J --> K[Append to launch_dict]
+    K --> L[Export CSV]
+    style L fill:#000,stroke:#00ffff,stroke-width:2px

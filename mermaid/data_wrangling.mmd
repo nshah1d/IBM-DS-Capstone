@@ -1,0 +1,10 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000', 'primaryTextColor': '#fff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'tertiaryColor': '#000'}}}%%
+graph TD
+    A[dataset_part_1.csv] --> B[Analyze 'Outcome' Column]
+    B --> C{Is Outcome in bad_outcomes?}
+    C -->|Yes| D[Assign Class = 0]
+    C -->|No| E[Assign Class = 1]
+    D & E --> F[Create 'Class' Column]
+    F --> G[Calculate Success Rate mean]
+    G --> H[Export dataset_part_2.csv]
+    style H fill:#000,stroke:#00ffff,stroke-width:2px

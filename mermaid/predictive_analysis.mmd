@@ -1,0 +1,13 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000', 'primaryTextColor': '#fff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'tertiaryColor': '#000'}}}%%
+graph TD
+    A[Input Features X] --> B[StandardScaler]
+    B --> C[Split: 80% Train / 20% Test]
+    C --> D{Algorithm Loop}
+    D -->|Logistic Regression| E[GridSearchCV cv=10]
+    D -->|SVM| E
+    D -->|Decision Tree| E
+    D -->|KNN| E
+    E --> F[Best Hyperparameters]
+    F --> G[Validate on Test Data]
+    G --> H[Compare Accuracy Scores]
+    style H fill:#000,stroke:#00ffff,stroke-width:2px

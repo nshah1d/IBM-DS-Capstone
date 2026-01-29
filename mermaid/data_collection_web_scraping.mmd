@@ -1,0 +1,16 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#000', 'primaryTextColor': '#fff', 'primaryBorderColor': '#00ffff', 'lineColor': '#00ffff', 'tertiaryColor': '#000'}}}%%
+graph TD
+    A[Wikipedia HTML] --> B[Find Table: wikitable]
+    B --> C[Iterate Rows tr]
+    C --> D{Is Flight No?}
+    D -->|Yes| E[Call Helpers]
+    E --> F[date_time]
+    E --> G[get_mass]
+    E --> H[landing_status]
+    E --> I[booster_version]
+    E --> J{Customer Link?}
+    J -->|Yes| K[Get .a.string]
+    J -->|No| L[Get .text.strip]
+    F & G & H & I & K & L --> M[Append to launch_dict]
+    M --> N[Create DataFrame]
+    style N fill:#000,stroke:#00ffff,stroke-width:2px
